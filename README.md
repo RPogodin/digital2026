@@ -48,7 +48,7 @@ git fetch --all --prune
 # Стянуть все изменения текущей ветки
 git pull
 
-# # 3) Обновить master до состояния origin/master (обычный вариант через fast-forward)
+# Обновить master до состояния origin/master (обычный вариант через fast-forward)
 git pull --ff-only origin master
 
 # Добавить изменения в индекс
