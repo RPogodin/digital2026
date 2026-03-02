@@ -67,3 +67,4 @@ git push
 # Флоу работы (перед каждой новой задачей)
 git fetch --all --prune
 git switch master
+Привет!
