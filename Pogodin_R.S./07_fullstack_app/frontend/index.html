@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный трекер задач</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Этап 07</p>
+                <h1>Учебный трекер задач</h1>
+                <p class="lead">
+                    Финальный шаг: backend на Go, frontend на чистом JavaScript,
+                    SQLite, фильтрация, редактирование и наглядный поток данных по HTTP.
+                </p>
+            </div>
+            <div class="hero-note">
+                <p><strong>Подсказка для лекции:</strong></p>
+                <p>Откройте DevTools и покажите, как одно действие пользователя проходит путь от формы до SQL и обратно в DOM.</p>
+            </div>
+        </section>
+
+        <section class="toolbar card">
+            <div class="toolbar-group">
+                <label for="search">Поиск</label>
+                <input id="search" type="search" placeholder="Искать по заголовку и описанию">
+            </div>
+            <div class="toolbar-group">
+                <label for="filter-status">Статус</label>
+                <select id="filter-status">
+                    <option value="">Все</option>
+                    <option value="todo">todo</option>
+                    <option value="doing">doing</option>
+                    <option value="done">done</option>
+                </select>
+            </div>
+            <div class="toolbar-group">
+                <label for="filter-category">Категория</label>
+                <select id="filter-category">
+                    <option value="">Все</option>
+                    <option value="lecture">lecture</option>
+                    <option value="demo">demo</option>
+                    <option value="infra">infra</option>
+                </select>
+            </div>
+            <button id="filter-button" type="button">Применить фильтр</button>
+        </section>
+
+        <section class="content-grid">
+            <section class="card">
+                <div class="card-header">
+                    <h2 id="form-title">Новая задача</h2>
+                    <button id="reset-button" type="button" class="ghost-button">Очистить форму</button>
+                </div>
+                <form id="task-form" class="task-form">
+                    <input id="task-id" type="hidden">
+
+                    <label for="title">Заголовок</label>
+                    <input id="title" name="title" type="text" maxlength="120" required>
+
+                    <label for="description">Описание</label>
+                    <textarea id="description" name="description" rows="5" maxlength="500"></textarea>
+
+                    <label for="status">Статус</label>
+                    <select id="status" name="status">
+                        <option value="todo">todo</option>
+                        <option value="doing">doing</option>
+                        <option value="done">done</option>
+                    </select>
+
+                    <label for="category">Категория</label>
+                    <select id="category" name="category">
+                        <option value="lecture">lecture</option>
+                        <option value="demo">demo</option>
+                        <option value="infra">infra</option>
+                    </select>
+
+                    <button id="submit-button" type="submit">Создать задачу</button>
+                </form>
+                <p id="status-message" class="status-message"></p>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <h2>Список задач</h2>
+                    <button id="reload-button" type="button" class="ghost-button">Перезагрузить</button>
+                </div>
+                <ul id="task-list" class="task-list"></ul>
+            </section>
+        </section>
+    </main>
+
+    <script src="/app.js"></script>
+</body>
+</html>
