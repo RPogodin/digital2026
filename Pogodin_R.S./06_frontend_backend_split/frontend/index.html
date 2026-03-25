@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend + Backend по HTTP</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="layout">
+        <section class="hero">
+            <p class="eyebrow">Этап 06</p>
+            <h1>Раздельные frontend и backend</h1>
+            <p class="lead">
+                Frontend живет в статических файлах, backend отдает JSON API,
+                а браузер связывает их через <code>fetch</code>.
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>Новая задача</h2>
+            <form id="task-form" class="task-form">
+                <label for="title">Заголовок</label>
+                <input id="title" name="title" type="text" placeholder="Например, показать fetch в DevTools" required>
+                <button type="submit">Создать</button>
+            </form>
+            <p id="status" class="status"></p>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Список задач</h2>
+                <button id="reload-button" type="button" class="ghost-button">Обновить список</button>
+            </div>
+            <ul id="task-list" class="task-list"></ul>
+        </section>
+    </main>
+
+    <script src="/app.js"></script>
+</body>
+</html>
+

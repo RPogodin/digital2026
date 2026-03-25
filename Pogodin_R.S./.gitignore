@@ -1,0 +1,12 @@
+bin/
+dist/
+coverage.out
+*.test
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+05_crud_with_sqlite/tasks.db
+07_fullstack_app/data/*.db
+07_fullstack_app/data/*.db-journal
+

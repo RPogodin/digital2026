@@ -1,0 +1,245 @@
+:root {
+    --sand: #f6efe2;
+    --paper: rgba(255, 252, 247, 0.88);
+    --line: #d8c2a8;
+    --accent: #a2441d;
+    --accent-soft: #f0d8c8;
+    --ink: #2b211d;
+    --muted: #655348;
+    --olive: #65714a;
+    --shadow: 0 26px 60px rgba(109, 77, 41, 0.14);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at top right, rgba(255, 212, 148, 0.55), transparent 30%),
+        radial-gradient(circle at left center, rgba(207, 224, 194, 0.4), transparent 28%),
+        linear-gradient(180deg, #fff8ee, var(--sand));
+}
+
+h1, h2 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.app-shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 38px 16px 56px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+    margin-bottom: 22px;
+    align-items: start;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-size: 0.8rem;
+}
+
+h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+}
+
+.lead {
+    margin: 0;
+    max-width: 720px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.hero-note,
+.card,
+.toolbar {
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: var(--paper);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+}
+
+.hero-note {
+    padding: 18px;
+}
+
+.toolbar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    gap: 14px;
+    padding: 18px;
+    margin-bottom: 22px;
+}
+
+.toolbar-group,
+.task-form {
+    display: grid;
+    gap: 8px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+    gap: 22px;
+}
+
+.card {
+    padding: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+label {
+    font-weight: 700;
+}
+
+input,
+select,
+textarea,
+button {
+    font: inherit;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 16px;
+    border: 1px solid #ccb79f;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--ink);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button {
+    border: none;
+    border-radius: 999px;
+    padding: 12px 16px;
+    cursor: pointer;
+    background: var(--accent);
+    color: #fffaf5;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    opacity: 0.94;
+}
+
+.ghost-button {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid #cfbaa2;
+}
+
+.task-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+}
+
+.task-card {
+    padding: 16px;
+    border-radius: 18px;
+    background: rgba(255, 248, 240, 0.96);
+    border: 1px solid #e6d5c0;
+}
+
+.task-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.08rem;
+}
+
+.task-card p {
+    margin: 0 0 10px;
+    color: var(--muted);
+}
+
+.task-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.chip {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+.chip.status-done {
+    background: rgba(162, 68, 29, 0.12);
+    color: var(--accent);
+}
+
+.chip.status-doing {
+    background: rgba(101, 113, 74, 0.16);
+    color: var(--olive);
+}
+
+.chip.status-todo {
+    background: rgba(97, 76, 63, 0.12);
+    color: #6a4f40;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions button {
+    flex: 1;
+}
+
+.status-message {
+    min-height: 1.5em;
+    color: var(--accent);
+}
+
+.empty {
+    padding: 22px;
+    text-align: center;
+    border: 1px dashed #d7c2ab;
+    border-radius: 18px;
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .hero,
+    .content-grid,
+    .toolbar {
+        grid-template-columns: 1fr;
+    }
+}
+
