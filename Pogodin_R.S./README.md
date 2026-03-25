@@ -1,5 +1,47 @@
 # Учебный репозиторий: эволюция backend + frontend по HTTP
 
+## Как установить VS Code с поддержкой Go
+
+Если нужен готовый рабочий набор для запуска и разбора примеров из этого
+репозитория, удобная схема такая:
+
+1. Установить Go по инструкции ниже.
+2. Установить Visual Studio Code.
+3. В VS Code открыть `Extensions` и поставить расширение `Go` от Google.
+4. После первого открытия `.go`-файла согласиться на установку рекомендуемых
+   инструментов Go, которые предложит расширение.
+
+### macOS
+
+Через Homebrew:
+
+```bash
+brew install --cask visual-studio-code
+code --version
+```
+
+Если Homebrew не используется, скачайте VS Code с
+<https://code.visualstudio.com/>.
+
+### Ubuntu
+
+Через Snap:
+
+```bash
+sudo snap install code --classic
+code --version
+```
+
+Если Snap не используется, можно скачать `.deb`-пакет с
+<https://code.visualstudio.com/>.
+
+### Что сделать после установки VS Code
+
+- Открыть корень этого репозитория в VS Code.
+- Убедиться, что команда `go version` отрабатывает в терминале VS Code.
+- Установить расширение `Go` от Google.
+- Если редактор предложит установить `gopls`, `dlv`, `goimports` и другие Go tools, согласиться.
+
 ## Как установить Go на macOS и Ubuntu
 
 ### macOS
